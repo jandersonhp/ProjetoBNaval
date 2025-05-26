@@ -6,5 +6,3 @@
 
 Projeto também para que eu aprenda a utilizar melhor o github direto pelo VSCode.
 
-
-- Teste
