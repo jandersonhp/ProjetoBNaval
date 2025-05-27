@@ -8,16 +8,35 @@ substituicoes = {
 }
 
 # Input do usuário
-texto = input("Digite o texto para encriptar: ").upper()
+#Função para retornar caso tenha algo errado.
+def encriptar():
+    texto = input("Digite o texto para encriptar: ").upper()
+    texto_substituido = ""
 
-# Substituição
-texto_substituido = ""
-
-for letra in texto:
-    if letra in substituicoes:
-        texto_substituido += substituicoes[letra]
-    else:
-        texto_substituido += letra
+    for letra in texto:
+        if letra in substituicoes:
+            texto_substituido += substituicoes[letra]
+        else:
+            print('Use apenas letras.')
+            return encriptar()
+    
+    return texto_substituido
 
 # Resultado
-print("Texto encriptado:", texto_substituido)
+while True:
+    resultado = encriptar()
+    print("Texto encriptado:", resultado)
+
+    while True:
+#Perguntar se quer encriptar outro texto
+        encriptarNovo = input('Deseja encriptar outro texto? (S/N): ').upper()
+#If para retornar ao início
+        if encriptarNovo == 'S' or encriptarNovo == 'SIM':
+            break
+#Elif para encerrar o programa
+        elif encriptarNovo == 'N' or encriptarNovo == 'NAO' or encriptarNovo == 'NÃO':
+            print('Encerrando o programa.')
+            exit()
+    #Mensagem e volta, caso a pessoa não digite o correto.
+        else:
+            print('Digite apenas S ou N, por favor.')
