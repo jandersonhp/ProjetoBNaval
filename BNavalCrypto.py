@@ -14,7 +14,7 @@ substituicoes = {
 # Input do usuário e transformar o texto todo em maiúsculo.
 
 def encriptar():
-    texto = input("Digite o texto para encriptar: ").upper()
+    texto = input("\nDigite o texto para encriptar: ").upper()
     texto_substituido = ""
 
 # Substituição das letras no dicionário.
@@ -32,18 +32,18 @@ def encriptar():
 # Resultado e texto original
 while True:
     texto_original, resultado = encriptar()
-    print(f'Texto original: {texto_original}')
+    print(f'\nTexto original: {texto_original}')
     print(f'Texto encriptado: {resultado}')
 
     while True:
 #Perguntar se quer encriptar outro texto
-        encriptarNovo = input('Deseja encriptar outro texto? (S/N): ').strip().upper()
+        encriptarNovo = input('\nDeseja encriptar outro texto? (S/N): ').strip().upper()
 #If para retornar ao início
         if encriptarNovo in ('S', 'SIM'):
             break
 #Elif para encerrar o programa
         elif encriptarNovo in ('NÃO', 'N', 'NAO', 'NO'):
-            print('Encerrando o programa.')
+            print('Encerrando o programa.\n')
             exit()
     #Mensagem e volta, caso a pessoa não digite o correto.
         else:
