@@ -1,13 +1,14 @@
 # Dicionário com as substituições desejadas.
-# Faltam as letras com acento.
 substituicoes = {
     'A': 'A1', 'B': 'A2', 'C': 'A3', 'D': 'A4', 'E': 'A5', 'F': 'A6', 'G': 'A7', 'H': 'A8', 'I': 'A9',
     'J': 'B1', 'K': 'B2', 'L': 'B3', 'M': 'B4', 'N': 'B5', 'O': 'B6', 'P': 'B7', 'Q': 'B8', 'R': 'B9',
     'S': 'C1', 'T': 'C2', 'U': 'C3', 'V': 'C4', 'W': 'C5', 'X': 'C6', 'Y': 'C7', 'Z': 'C8',
     'Ã': 'A1', 'Á': 'A1', 'À': 'A1',
     'Õ': 'B6', 'Ó': 'B6', 'Ô': 'B6',
-    'É': 'A5', 'Ê': 'A5', 
-    ' ': ' ', '!': '!', '?': '?', ',': ',',
+    'É': 'A5', 'Ê': 'A5',
+    'Í': 'A9', 'Ì': 'A9', 'Î': 'A9',
+    'Ú': 'C3', 'Ù': 'C3', 'Û': 'C3',
+    ' ': ' ', '!': '!', '?': '?', ',': ',', '.': '.', ':': ':',
     }
 
 # Input do usuário e transformar o texto todo em maiúsculo.
@@ -29,15 +30,14 @@ def encriptar():
     return texto, texto_substituido
 
 # Resultado e texto original
-# Texto original com F-String (Só pra eu me lembrar que existe f-string)
 while True:
     texto_original, resultado = encriptar()
-    print(f'Texto original:' + texto_original)
-    print('Texto encriptado:', resultado)
+    print(f'Texto original: {texto_original}')
+    print(f'Texto encriptado: {resultado}')
 
     while True:
 #Perguntar se quer encriptar outro texto
-        encriptarNovo = input('Deseja encriptar outro texto? (S/N): ').upper()
+        encriptarNovo = input('Deseja encriptar outro texto? (S/N): ').strip().upper()
 #If para retornar ao início
         if encriptarNovo in ('S', 'SIM'):
             break
